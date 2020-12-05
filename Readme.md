@@ -1,4 +1,4 @@
-the project c# with visual studio 2019 one workbook for to projects \
+the project c# with visual studio 2019 one workbook for to projects\
 
 this is a very special solution for a very special problem \
 what doe we have is \
