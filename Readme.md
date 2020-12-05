@@ -1,3 +1,5 @@
+the project c# with visual studio 2019 one workbook for to projects \
+
 this is a very special solution for a very special problem \
 what doe we have is \
 a solution as an .exe or as an windows service (yes this is also an exe) \
