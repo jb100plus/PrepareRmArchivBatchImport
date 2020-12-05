@@ -71,7 +71,7 @@ namespace PrepareRmArchivBatchImportService
                         // nur genau einmal, beim zweiten Event
                         FirstEvent[e.FullPath] = 1;
                         Mover mv = new Mover(e.FullPath, dirToMove, new Mover.MoverCallback(Callback));
-                        Thread tws = new Thread(new ThreadStart(mv.Move));
+                        Thread tws = new Thread(new ThreadStart(mv.MoveAsFileSystemWatcher));
                         tws.Start();
                     }
                     // alle weiteren Events für die Datei werden ignoriert

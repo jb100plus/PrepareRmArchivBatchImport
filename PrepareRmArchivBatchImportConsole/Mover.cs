@@ -21,7 +21,7 @@ namespace PrepareRmArchivBatchImport
             Logger.Log(Logger.LogLevel.DEBUG, String.Format("Mover created {0}", source));
         }
 
-        public void Move()
+        public void MoveAsFileSystemWatcher()
         {
             // etwas Zeit zum Schreiben/Schliessen der Datei geben
             Thread.Sleep(2000);
@@ -51,13 +51,34 @@ namespace PrepareRmArchivBatchImport
                 catch (Exception ex)
                 {
                     tries++;
-                    if(tries == maxtries)
+                    if (tries == maxtries)
                         Logger.Log(Logger.LogLevel.WARNING, String.Format("File {0} not moved, {1}", source, ex.Message));
                     Thread.Sleep(2000);
                 }
             }
             cbk(source);
         }
+        
+        public void MoveCSV()
+        {
+            
+            RMCSVFile rp = new RMCSVFile(source);
+            string mandant = rp.GetMandant();
+            if (null != mandant)
+            {
+                Logger.Log(Logger.LogLevel.DEBUG, String.Format("Found mandant {0} {1}", mandant, source));
+                this.destination = Path.GetDirectoryName(source) + "\\" + mandant + "\\" + Path.GetFileName(source);
+            }
+            try
+            {
+                File.Move(source, destination);
+                Logger.Log(Logger.LogLevel.INFO, $"File moved from  {source} to {destination}");
+            }
+            catch (Exception ex)
+            {
+                Logger.Log(Logger.LogLevel.WARNING, String.Format("File {0} not moved, {1}", source, ex.Message));
+            }
+            cbk(source);
+        }
     }
-
 }
