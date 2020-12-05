@@ -1,6 +1,6 @@
-this is a very special solution for a very special problem
-what doe we have
-a solution as an .exe or as an windows service (yes this is also an exe)
+this is a very special solution for a very special problem \
+what doe we have is \
+a solution as an .exe or as an windows service (yes this is also an exe) \
 and it's a german problem:\
 \
 Für jedes zu archivierende Dokumen wird vom Rechnunsgmanager eine csv-Datei mit dem gleichen Dateinamen .csv wie die TIFF erstellt.
