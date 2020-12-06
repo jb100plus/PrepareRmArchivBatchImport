@@ -1,4 +1,6 @@
-the project is in c# with visual studio 2019 one workbook for to projects, its windows only\
+## PrepareRmArchivBatchImport
+
+the project is realized in c# with visual studio 2019 one workbook for to projects, its windows only
 
 this is a very special solution for a very special problem \
 what doe we have is \
