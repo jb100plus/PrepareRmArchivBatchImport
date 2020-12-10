@@ -80,5 +80,32 @@ namespace PrepareRmArchivBatchImport
             }
             cbk(source);
         }
-    }
+
+
+        public void MoveCSVAndTiF()
+        {
+
+            RMCSVFile rp = new RMCSVFile(source);
+            string mandant = rp.GetMandant();
+            if (null != mandant)
+            {
+                Logger.Log(Logger.LogLevel.DEBUG, String.Format("Found mandant {0} {1}", mandant, source));
+                this.destination = Path.GetDirectoryName(source) + "\\" + mandant + "\\" + Path.GetFileName(source);
+            }
+            try
+            {
+                rp.SaveAsNewFile();
+                rp.MoveTIF();
+                rp.DeleteOldCSV();
+                Logger.Log(Logger.LogLevel.INFO, $"File and TIF moved from  {source} to {destination}");
+            }
+            catch (Exception ex)
+            {
+                Logger.Log(Logger.LogLevel.WARNING, String.Format("File {0} not moved, {1}", source, ex.Message));
+            }
+            cbk(source);
+        }
+    
+
+}
 }

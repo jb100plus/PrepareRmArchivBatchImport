@@ -7,7 +7,7 @@ namespace PrepareRmArchivBatchImport
 {
     public static class Logger
     {
-        public enum LogLevel { DEBUG = 0, INFO = 1, WARNING = 2, CRITICAL = 3, ERROR = 4 };
+        public enum LogLevel { DEBUG = 0, INFO = 1, WARNING = 2, CRITICAL = 3, ERROR = 4, HEARTBEAT = 5};
 
         static readonly LogLevel currLogLevel;
         static readonly TextWriter tw;
