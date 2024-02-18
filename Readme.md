@@ -1,6 +1,6 @@
 # PrepareRmArchivBatchImport
 
-the project is realized in c# with visual studio 2019 one workbook for to projects, its windows only
+the project is realized in c# with visual studio 2019 one workbook for two projects, its windows only
 
 what do we have is a solution as: 
 * an executeable File .exe or
