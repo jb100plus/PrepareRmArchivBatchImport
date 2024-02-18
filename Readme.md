@@ -28,7 +28,7 @@ Werden beide Dateien in den Mandantenorner verschoben würden bei Namensdopplung
 auf Existenz geprüft wird. Somit findet aber auch keine Weiterverarbeitung statt, beide Dateien würden im Standardordner verbleiben.
 Bei diesem Vorgehen muss aber der vollständige Dateiname der TIF Datei in der csv angepasst werden
 Da der Batchimport über die Aufgabensteuerung einmal täglich läuft, ist die Einrichtung eines Windows Service mit FileSystemWatcher nicht erforderlich.
-Dieser Service eurde eher als Proof of Concept und als Beispiel für Multitheading programmiert.
+Dieser Service wurde eher als Proof of Concept und als Beispiel für Multitheading programmiert.
 Die Klassen finden Verwendung bei der Consolenanwedung welche dann kurz vor dem Batchimport ebenfalls über die Aufgabensteuerung gestartet wird.
 Da der Batchimprt in der Regel außerhalb der Arbeitszeit erfolgt, wird diese Konsolenanwendung wie folgt ablaufen:
 Duchsuchen des Standardverzeichnisses und nur Verschieben der csv-Dateien, die TIFF Dateien bleiben im Standardordner, der Batchimport läuft 5 Minuten später
